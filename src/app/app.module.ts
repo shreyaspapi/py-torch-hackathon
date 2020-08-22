@@ -7,7 +7,7 @@ import { LandingComponent } from './landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModules } from './shared.modules';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, LandingComponent],
   imports: [
@@ -16,6 +16,7 @@ import { SharedModules } from './shared.modules';
     BrowserAnimationsModule,
     NgbModule,
     SharedModules,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
