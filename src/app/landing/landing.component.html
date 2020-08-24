@@ -1,0 +1,87 @@
+<div class="content">
+  <nav class="navbar navbar-expand-sm navbar-white bg-white">
+    <a class="company-name" href="#">Clynica.</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon">
+        <mat-icon>menu</mat-icon>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">How it works?</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row content-middle">
+    <div class="col-sm">
+      <mat-card class="content-card">
+        <mat-card-content>
+          <ul>
+            <li *ngFor="let file of files">
+              <mat-progress-bar
+                class="card-content"
+                [value]="file.progress"
+              ></mat-progress-bar>
+              <span id="file-label"> </span>
+            </li>
+            <h1>{{ files_data }}</h1>
+          </ul>
+        </mat-card-content>
+        <mat-card-actions class="upload">
+          <button
+            mat-button
+            *ngIf="button_state"
+            class="button"
+            color="warn"
+            (click)="onClick()"
+          >
+            <img src="assets/upload.png" />
+          </button>
+        </mat-card-actions> </mat-card
+      ><input
+        type="file"
+        #fileUpload
+        id="fileUpload"
+        name="fileUpload"
+        accept="image/*"
+        style="display: none;"
+      />
+    </div>
+    <div class="col-sm">
+      <div class="content-second">
+        <div class="first">
+          <p class="title-1">Lung Disease</p>
+          <p class="title-1">Recognition.</p>
+        </div>
+        <div class="second">
+          <p class="descrip">
+            Clynica is an intelligent tool for detecting <br />lung diseases. A
+            deeper explanation of how<br />Clynica uses Artifical Intelligence
+            to detect<br />diseases is available in our
+            <a href="#">How it works</a> page
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row content-end">
+    <div class="col-sm">
+      <div class="opensource">
+        Created by <a href="https://shreyaspapi.github.io">@shreyas</a>.
+      </div>
+    </div>
+    <div class="col-sm"></div>
+  </div>
+</div>
