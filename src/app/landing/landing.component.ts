@@ -12,6 +12,8 @@ import { UploadService } from '../upload.service';
 export class LandingComponent implements OnInit {
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef;
   files = [];
+  files_data = '';
+  button_state = true;
   constructor(private uploadService: UploadService) {}
 
   ngOnInit(): void {}
@@ -40,12 +42,14 @@ export class LandingComponent implements OnInit {
       .subscribe((event: any) => {
         if (typeof event === 'object') {
           console.log(event.body);
+          this.files_data = event.body.description;
         }
       });
   }
 
   private uploadFiles() {
     this.fileUpload.nativeElement.value = '';
+    this.button_state = false;
     this.files.forEach((file) => {
       this.uploadFile(file);
     });
